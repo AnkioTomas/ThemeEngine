@@ -6,23 +6,23 @@ plugins {
 version = library_version
 
 ext {
-    PUBLISH_GROUP_ID = 'io.github.prathameshmm02.themeEngine'
+    PUBLISH_GROUP_ID = 'com.github.dreamncn'
     PUBLISH_VERSION = version
     PUBLISH_ARTIFACT_ID = 'themeEngine'
     PUBLISH_DESCRIPTION = 'A Material Design 3 Theme Engine for Android'
-    PUBLISH_URL = 'https://github.com/prathameshmm02/ThemeEngine'
+    PUBLISH_URL = 'https://github.com/dreamncn/ThemeEngine'
     PUBLISH_LICENSE_NAME = 'Apache License'
     PUBLISH_LICENSE_URL =
-            'https://github.com/prathameshmm02/ThemeEngine/blob/master/LICENSE'
+            'https://github.com/dreamncn/ThemeEngine/blob/master/LICENSE'
     PUBLISH_DEVELOPER_ID = 'quickersilver'
     PUBLISH_DEVELOPER_NAME = 'Prathamesh More'
     PUBLISH_DEVELOPER_EMAIL = 'prathameshmm02@gmail.com'
     PUBLISH_SCM_CONNECTION =
-            'scm:git:github.com/prathameshmm02/ThemeEngine.git'
+            'scm:git:github.com/dreamncn/ThemeEngine.git'
     PUBLISH_SCM_DEVELOPER_CONNECTION =
-            'scm:git:ssh://github.com/prathameshmm02/ThemeEngine.git'
+            'scm:git:ssh://github.com/dreamncn/ThemeEngine.git'
     PUBLISH_SCM_URL =
-                'https://github.com/prathameshmm02/ThemeEngine/tree/master'
+                'https://github.com/dreamncn/ThemeEngine/tree/master'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
