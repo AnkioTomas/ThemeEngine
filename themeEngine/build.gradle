@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'dev.rikka.tools.materialthemebuilder'
 }
 
 version = library_version
@@ -53,9 +54,55 @@ android {
     }
 }
 
+materialThemeBuilder {
+    themes {
+        [
+                "Amber": "FFC107",
+                "Blue": "2196F3",
+                "BlueGrey": "607D8B",
+                "BlueVariant": "0061A6",
+                "Brown": "795548",
+                "Cyan": "00BCD4",
+                "DeepOrange": "FF5722",
+                "DeepPurple": "673AB7",
+                "Green": "4CAF50",
+                "Indigo": "3F51B5",
+                "LightBlue": "03A9F4",
+                "LightGreen": "8BC34A",
+                "Lime": "CDDC39",
+                "Orange": "FF9800",
+                "Pink": "E91E63",
+                "Purple": "9C27B0",
+                "Red": "F44336",
+                "Teal": "009688",
+                "Violet": "4355B9",
+                "Yellow": "FFEB3B",
+                "Sakura": "FF9CA8"
+        ].each { name, color ->
+            create("Material${name}") {
+                lightThemeFormat = "ThemeOverlay.Material3.%s"
+                darkThemeFormat = "ThemeOverlay.Material3.%s"
+                lightThemeParent = "ThemeOverlay.Material3"
+                darkThemeParent = "ThemeOverlay.Material3"
+                primaryColor = "#${color}"
+            }
+        }
+    }
+    // Add Material Design 3 color tokens (such as palettePrimary100) in generated theme
+    // rikka.material >= 2.0.0 provides such attributes
+    generatePalette = true
+    generatePaletteAttributes = true
+    generateTextColors = true
+    packageName = "com.quickersilver.themeengine"
+
+}
+
+
 dependencies {
     implementation "androidx.core:core-ktx:1.12.0"
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "androidx.preference:preference-ktx:1.2.1"
     implementation "com.google.android.material:material:1.11.0"
+
+
 }
