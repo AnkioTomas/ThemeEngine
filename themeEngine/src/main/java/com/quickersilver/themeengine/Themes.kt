@@ -6,7 +6,7 @@ import androidx.annotation.StyleRes
 enum class Theme(@StyleRes val themeId: Int, @ColorRes val primaryColor: Int) {
     Amber(R.style.ThemeOverlay_Material3_MaterialAmber, R.color.md_theme_material_amber_light_primary),
     Blue(R.style.ThemeOverlay_Material3_MaterialBlue, R.color.md_theme_material_blue_light_primary),
-    BlueVariant(R.style.ThemeOverlay_Material3_MaterialBlueVariant, R.color.md_theme_material_light_blue_light_primary),
+    BlueVariant(R.style.ThemeOverlay_Material3_MaterialBlueVariant, R.color.md_theme_material_blue_variant_light_primary),
     Brown(R.style.ThemeOverlay_Material3_MaterialBrown, R.color.md_theme_material_brown_light_primary),
     Cyan(R.style.ThemeOverlay_Material3_MaterialCyan, R.color.md_theme_material_cyan_light_primary),
     DeepOrange(R.style.ThemeOverlay_Material3_MaterialDeepOrange, R.color.md_theme_material_deep_orange_light_primary),
