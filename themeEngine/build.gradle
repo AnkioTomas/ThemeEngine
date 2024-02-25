@@ -1,36 +1,14 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'dev.rikka.tools.materialthemebuilder'
+    id 'net.ankio.materialthemebuilder'
 }
 
-version = library_version
 
-ext {
-    PUBLISH_GROUP_ID = 'com.github.dreamncn'
-    PUBLISH_VERSION = version
-    PUBLISH_ARTIFACT_ID = 'themeEngine'
-    PUBLISH_DESCRIPTION = 'A Material Design 3 Theme Engine for Android'
-    PUBLISH_URL = 'https://github.com/AnkioTomas/ThemeEngine'
-    PUBLISH_LICENSE_NAME = 'Apache License'
-    PUBLISH_LICENSE_URL =
-            'https://github.com/AnkioTomas/ThemeEngine/blob/master/LICENSE'
-    PUBLISH_DEVELOPER_ID = 'quickersilver'
-    PUBLISH_DEVELOPER_NAME = 'Prathamesh More'
-    PUBLISH_DEVELOPER_EMAIL = 'prathameshmm02@gmail.com'
-    PUBLISH_SCM_CONNECTION =
-            'scm:git:github.com/AnkioTomas/ThemeEngine.git'
-    PUBLISH_SCM_DEVELOPER_CONNECTION =
-            'scm:git:ssh://github.com/AnkioTomas/ThemeEngine.git'
-    PUBLISH_SCM_URL =
-                'https://github.com/AnkioTomas/ThemeEngine/tree/master'
-}
-
-apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 android {
+    namespace "com.quickersilver.themeengine"
     compileSdk 34
-
     defaultConfig {
         minSdk 21
         targetSdk 34
@@ -85,6 +63,7 @@ materialThemeBuilder {
                 lightThemeParent = "ThemeOverlay.Material3"
                 darkThemeParent = "ThemeOverlay.Material3"
                 primaryColor = "#${color}"
+              //  dynamicColors = true
             }
         }
     }
@@ -102,7 +81,6 @@ dependencies {
     implementation "androidx.core:core-ktx:1.12.0"
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "androidx.preference:preference-ktx:1.2.1"
-    implementation "com.google.android.material:material:1.11.0"
-
-
+    implementation "com.google.android.material:material:1.12.0-alpha03"
+    //implementation project(':MaterialThemeBuilder')
 }
