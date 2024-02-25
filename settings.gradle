@@ -10,10 +10,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-
     }
 }
 
 rootProject.name = "Theme Engine"
+
 include ':app'
 include ':themeEngine'
+includeBuild 'MaterialThemeBuilder'
