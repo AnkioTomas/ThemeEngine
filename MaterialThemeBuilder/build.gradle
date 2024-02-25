@@ -1,0 +1,57 @@
+plugins {
+    id 'java-library'
+    id 'java-gradle-plugin'
+
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = [
+                    "material-color-utilities/java",
+                    "src/main/java"
+            ]
+
+        }
+    }
+}
+
+/*
+sourceSets.configureEach { set ->
+    println "${set.name}的文件是 ${set.java.srcDirs}"
+}
+*/
+
+
+
+dependencies {
+    compileOnly(gradleApi())
+    compileOnly("com.android.tools.build:gradle:8.2.2")
+    implementation 'androidx.annotation:annotation:1.7.1'
+    implementation('com.google.guava:guava:33.0.0-jre')
+}
+
+
+
+gradlePlugin {
+    plugins {
+        create("MaterialThemeBuilder") {
+            id = "net.ankio.materialthemebuilder"
+            displayName = "MaterialThemeBuilder"
+            description = "A gradle plugin that generates Material Design 3 themes for Android projects."
+            implementationClass = id + ".MaterialThemeBuilderPlugin"
+        }
+    }
+}
