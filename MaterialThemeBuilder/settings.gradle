@@ -13,8 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Theme Engine"
 
-includeBuild 'MaterialThemeBuilder'
-include ':app'
-include ':themeEngine'
+include ':MaterialThemeBuilder'
